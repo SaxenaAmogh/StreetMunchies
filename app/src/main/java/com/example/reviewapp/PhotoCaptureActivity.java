@@ -110,7 +110,7 @@ public class PhotoCaptureActivity extends AppCompatActivity {
 
             try {
                 ExifInterface exifInterface = new ExifInterface(new ByteArrayInputStream(byteArray));
-                int rotation = 90;
+                int rotation = 0;
                 Matrix matrix = new Matrix();
                 matrix.postRotate(rotation);
                 photo = Bitmap.createBitmap(photo, 0, 0, photo.getWidth(), photo.getHeight(), matrix, true);
@@ -148,8 +148,8 @@ public class PhotoCaptureActivity extends AppCompatActivity {
                     public void run() {
                         Toast.makeText(PhotoCaptureActivity.this, "Successfully added data", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(PhotoCaptureActivity.this, ReviewPage.class);
-                        Log.d("test", "INTENT NEW ADD");
                         startActivity(intent);
+                        finish();
                     }
                 });
             }
