@@ -88,7 +88,6 @@ public class PhotoCaptureActivity extends AppCompatActivity {
             double longitude = location.getLongitude();
             locationString = latitude + "," + longitude;
             // Use the locationString as needed
-            Toast.makeText(this, locationString, Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "Unable to get location", Toast.LENGTH_SHORT).show();
         }

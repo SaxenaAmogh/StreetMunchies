@@ -1,8 +1,11 @@
 package com.example.reviewapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -21,6 +24,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -33,6 +38,7 @@ import okhttp3.Response;
 public class ReviewPage extends AppCompatActivity {
 
     public int id;
+    public String location, addressLine;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_page);
@@ -68,14 +74,19 @@ public class ReviewPage extends AppCompatActivity {
                         JSONObject jsonObject = new JSONObject(responseData);
                         id = jsonObject.getInt("id");
                         String imageBase64 = jsonObject.getString("image");
-                        String location = jsonObject.getString("location");
+                        location = jsonObject.getString("location");
+
+                        String[] parts = location.split(",");
+                        double latitude = Double.parseDouble(parts[0].trim());
+                        double longitude = Double.parseDouble(parts[1].trim());
 
                         byte[] decodedString = Base64.decode(imageBase64, Base64.DEFAULT);
                         Bitmap bitmap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 
                         runOnUiThread(() -> {
                             photo.setImageBitmap(bitmap);
-                            locate.setText((location));
+                            getAddressFromLocation(ReviewPage.this, latitude, longitude);
+                            locate.setText((addressLine));
                         });
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -133,6 +144,22 @@ public class ReviewPage extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    private void getAddressFromLocation(Context context, double latitude, double longitude) {
+        Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+        try {
+            List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
+            if (addresses != null && !addresses.isEmpty()) {
+                Address address = addresses.get(0);
+                addressLine = address.getAddressLine(0); // Complete address
+
+                Log.d("Location", "Address: " + addressLine);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("Location", "Error getting address: " + e.getMessage());
+        }
     }
 
     public void go_back(View view){

@@ -73,47 +73,8 @@
                         android:hint="@string/food_name"
                         android:textColor="#EB000000"
                         android:textSize="24sp"
-                        android:layout_marginEnd="10dp"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/ratings"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/alata"
-                            android:paddingTop="10dp"
-                            android:paddingEnd="10dp"
-                            android:paddingBottom="10dp"
-                            android:text="4.0"
-                            android:textColor="#EB000000"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.088"
-                            app:layout_constraintStart_toEndOf="@+id/cardView"
-                            app:layout_constraintTop_toBottomOf="@+id/foodname"
-                            app:layout_constraintVertical_bias="0.001"
-                            tools:ignore="MissingConstraints,RtlSymmetry" />
-
-                        <ImageView
-                            android:id="@+id/stars"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.007"
-                            app:layout_constraintStart_toEndOf="@+id/ratings"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.097"
-                            app:srcCompat="@android:drawable/btn_star"
-                            tools:ignore="MissingConstraints" />
-
-                    </LinearLayout>
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="40dp"/>
 
                     <TextView
                         android:id="@+id/foodlocation"
