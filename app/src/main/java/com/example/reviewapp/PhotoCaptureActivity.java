@@ -44,7 +44,7 @@ public class PhotoCaptureActivity extends AppCompatActivity {
     // Define the button and imageview type variable
     Button camera_open_id;
     ImageView click_image_id;
-    String imageBase64;
+    String imageBase64, locationString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +86,7 @@ public class PhotoCaptureActivity extends AppCompatActivity {
             Log.d("locate","testing");
             double latitude = location.getLatitude();
             double longitude = location.getLongitude();
-            String locationString = latitude + "," + longitude;
+            locationString = latitude + "," + longitude;
             // Use the locationString as needed
             Toast.makeText(this, locationString, Toast.LENGTH_LONG).show();
         } else {
@@ -126,7 +126,7 @@ public class PhotoCaptureActivity extends AppCompatActivity {
     public void submit(View view){
         OkHttpClient okHttpClient = new OkHttpClient();
 
-        RequestBody formbody = new FormBody.Builder().add("image", imageBase64).build();
+        RequestBody formbody = new FormBody.Builder().add("image", imageBase64).add("location", locationString).build();
 
         Request request = new Request.Builder().url("http://192.168.1.7:5000/upload").post(formbody).build();
 
@@ -147,6 +147,9 @@ public class PhotoCaptureActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(PhotoCaptureActivity.this, "Successfully added data", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(PhotoCaptureActivity.this, ReviewPage.class);
+                        Log.d("test", "INTENT NEW ADD");
+                        startActivity(intent);
                     }
                 });
             }
