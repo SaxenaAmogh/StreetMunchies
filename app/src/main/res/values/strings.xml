@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Review App</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="we_ll_send_you_a_verification_code_on_the_same_number">We\'ll send you a verification code on the same number.</string>
+    <string name="or">OR</string>
+    <string name="google">Google</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="login_signup">Login / Signup</string>
+    <string name="twitter">Twitter</string>
+    <string name="facebook">Facebook</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="hint">hint</string>
+    <string name="enter_6_digit_code">Enter 6 digit code</string>
+    <string name="submit">Submit</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="review_app">Review App</string>
+    <string name="your_location">Your Location</string>
+    <string name="capture">Capture</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="todo">TODO</string>
+    <string name="enter_your_email_id">Enter your email id</string>
+    <string name="we_ll_send_you_the_otp_on_the_same_email_id">We\'ll send you the OTP on the same email id.</string>
+    <string name="image_description" />
+    <string name="ok">Ok</string>
+    <string name="recapture">Recapture</string>
+    <string name="todo2">TODO2</string>
+    <string name="confirm">Confirm</string>
+    <string name="camera">Camera</string>
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/submitotp"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/rounded_button"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        android:onClick="onGetOTPClicked"
+        android:paddingStart="105dp"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otpContainer"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/cont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/confirm"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="324dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="320dp"
+        android:layout_height="57dp"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingVertical="8dp"
+        android:text="Verification Code"
+        android:textColor="#BF000000"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.111" />
+
+    <LinearLayout
+        android:id="@+id/otpContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/edit_text_bg2"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="330dp"
+        android:layout_height="62dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="We have sent the verification code to your email."
+        android:textColor="#41000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textView1"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/backtomain"
+        android:layout_width="46dp"
+        android:layout_height="37dp"
+        android:onClick="close"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/backicon"
+            tools:layout_editor_absoluteX="186dp"
+            tools:layout_editor_absoluteY="472dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/values/styles.xml -->
+<resources>
+    <style name="NoBorderButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:outlineProvider">@null</item>
+    </style>
+</resources>
