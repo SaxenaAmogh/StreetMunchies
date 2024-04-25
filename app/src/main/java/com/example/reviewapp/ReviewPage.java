@@ -57,7 +57,7 @@ public class ReviewPage extends AppCompatActivity {
         ImageView photo = findViewById(R.id.foodimage);
 
         OkHttpClient okHttpClient = new OkHttpClient();
-        Request request = new Request.Builder().url("http://192.168.1.7:5000/get_data").build();
+        Request request = new Request.Builder().url("http://192.168.211.238:5000/get_data").build();
 
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
@@ -117,7 +117,7 @@ public class ReviewPage extends AppCompatActivity {
                 .add("id", String.valueOf(id))
                 .build();
 
-        Request request = new Request.Builder().url("http://192.168.1.7:5000/add").post(formbody).build();
+        Request request = new Request.Builder().url("http://192.168.211.238:5000/add").post(formbody).build();
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
@@ -136,10 +136,8 @@ public class ReviewPage extends AppCompatActivity {
                     public void run() {
                         Toast.makeText(ReviewPage.this, "Review saved successfully", Toast.LENGTH_SHORT).show();
                         // Clear the EditText fields and reset the RatingBar
-                        foodname.getText().clear();
-                        titleEditText.getText().clear();
-                        reviewEditText.getText().clear();
-                        ratingBar.setRating(0);
+                        Intent intent = new Intent(ReviewPage.this, Activity_Myreview.class);
+                        startActivity(intent);
                     }
                 });
             }

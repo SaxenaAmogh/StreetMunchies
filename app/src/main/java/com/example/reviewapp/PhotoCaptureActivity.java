@@ -127,7 +127,7 @@ public class PhotoCaptureActivity extends AppCompatActivity {
 
         RequestBody formbody = new FormBody.Builder().add("image", imageBase64).add("location", locationString).build();
 
-        Request request = new Request.Builder().url("http://192.168.1.7:5000/upload").post(formbody).build();
+        Request request = new Request.Builder().url("http://192.168.211.238:5000/upload").post(formbody).build();
 
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override

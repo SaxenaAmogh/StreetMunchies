@@ -17,13 +17,13 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.util.Objects;
 
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -34,29 +34,41 @@ public class MainActivity extends AppCompatActivity {
 
     public void onGetOTPClicked(View view) {
         TextInputEditText phoneEditText = findViewById(R.id.phoneEditText);
+        TextInputEditText passwordEnter = findViewById(R.id.password);
+
         String email = (Objects.requireNonNull(phoneEditText.getText())).toString();
-        if (isValidEmail(email)) {
-            Intent intent = new Intent(this,MainPage.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
-        }
-    }
+        String password = (Objects.requireNonNull(passwordEnter.getText())).toString();
 
-    private boolean isValidEmail(String email) {
-        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    }
+        OkHttpClient okHttpClient = new OkHttpClient();
 
-    public void onGoogleLoginClicked(View view) {
-    }
-    public void onFacebookLoginClicked(View view) {
-        // Handle the click event for Facebook login/signup
-        Intent intent = new Intent(MainActivity.this, TestActivity.class);
-        startActivity(intent);
-    }
+        RequestBody formbody = new FormBody.Builder()
+                .add("email", email)
+                .add("password", password)
+                .build();
 
-    //public void onTwitterLoginClicked(View view) {
-    // Handle the click event for Twitter login/signup
-    //}
+        Request request = new Request.Builder().url("http://192.168.211.238:5000/email").post(formbody).build();
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(MainActivity.this, e.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
 
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(MainActivity.this, "Data saved successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, MainPage.class);
+                        startActivity(intent);
+                    }
+                });
+            }
+        });
+    }
 }

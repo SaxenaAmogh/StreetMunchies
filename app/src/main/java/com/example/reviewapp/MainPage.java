@@ -3,11 +3,21 @@ package com.example.reviewapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainPage extends AppCompatActivity {
 
@@ -35,13 +45,5 @@ public class MainPage extends AppCompatActivity {
                 return false;
             }
         });
-
-
     }
-
-
-
-
-
-
 }

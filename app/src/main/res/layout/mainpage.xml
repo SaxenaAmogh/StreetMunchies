@@ -3,81 +3,310 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.014">
-
-        <TextView
-            android:id="@+id/appname"
-            android:layout_width="144dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="7dp"
-            android:text="Street Munchies"
-            android:textAlignment="viewStart" />
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="52dp"
-            android:layout_height="50dp"
-            android:background="@drawable/rounded_search_view_bg"
-            android:backgroundTint="#B8B6B6"
-            app:srcCompat="@android:drawable/ic_menu_mylocation"
-            android:contentDescription="@string/todo" />
-
-        <TextView
-            android:id="@+id/location"
-            android:layout_width="97dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="@string/your_location"
-            android:paddingVertical="7dp" />
-
-    </LinearLayout>
-
-    <SearchView
-        android:id="@+id/search_location"
-        android:layout_width="355dp"
-        android:layout_height="46dp"
-        android:background="@drawable/rounded_search_view_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
+    android:layout_height="match_parent"
+    android:background="#E2FFFFFF">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_navigation_menu"
+        android:layout_gravity="bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 
-    <ScrollView
-        android:id="@+id/main"
-        android:layout_width="414dp"
-        android:layout_height="706dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+
+        <SearchView
+            android:id="@+id/search_location"
+            android:layout_width="318dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_search_view_bg"/>
+
+        <ScrollView
+            android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:layout_height="679dp"
+            android:background="#E2FFFFFF"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ramladdoo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.505"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="202dp"
+                        android:background="@drawable/round"
+                        app:cardCornerRadius="15dp"
+                        tools:layout_editor_absoluteX="35dp"
+                        tools:layout_editor_absoluteY="297dp">
+
+                        <ImageView
+                            android:id="@+id/foodimage"
+                            android:layout_width="407dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/round"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ramladdoo"
+                            android:visibility="visible" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Ram Laddoo"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="406dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/momos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="202dp"
+                        android:background="@drawable/round"
+                        app:cardCornerRadius="15dp"
+                        tools:layout_editor_absoluteX="35dp"
+                        tools:layout_editor_absoluteY="297dp">
+
+                        <ImageView
+                            android:id="@+id/foodimage2"
+                            android:layout_width="407dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/round"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/momos"
+                            android:visibility="visible" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/foodname2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Momos"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="406dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/choleBhature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="202dp"
+                        android:background="@drawable/round"
+                        app:cardCornerRadius="15dp"
+                        tools:layout_editor_absoluteX="35dp"
+                        tools:layout_editor_absoluteY="297dp">
+
+                        <ImageView
+                            android:id="@+id/foodimage3"
+                            android:layout_width="407dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/round"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/cholebhature"
+                            android:visibility="visible" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/foodname3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Chole Bhature"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="406dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bhelpuri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="202dp"
+                        android:background="@drawable/round"
+                        app:cardCornerRadius="15dp"
+                        tools:layout_editor_absoluteX="35dp"
+                        tools:layout_editor_absoluteY="297dp">
+
+                        <ImageView
+                            android:id="@+id/foodimage4"
+                            android:layout_width="407dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/round"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bhelpuri"
+                            android:visibility="visible" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/foodname4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Bhel Puri"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="406dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/golgappe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="202dp"
+                        android:background="@drawable/round"
+                        app:cardCornerRadius="15dp"
+                        tools:layout_editor_absoluteX="35dp"
+                        tools:layout_editor_absoluteY="297dp">
+
+                        <ImageView
+                            android:id="@+id/foodimage5"
+                            android:layout_width="407dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/round"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/golgappe"
+                            android:visibility="visible" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/foodname5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Golgappe"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="406dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/kababs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="202dp"
+                        android:background="@drawable/round"
+                        app:cardCornerRadius="15dp"
+                        tools:layout_editor_absoluteX="35dp"
+                        tools:layout_editor_absoluteY="297dp">
+
+                        <ImageView
+                            android:id="@+id/foodimage6"
+                            android:layout_width="407dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/round"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/kababs"
+                            android:visibility="visible" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/foodname6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Kababs"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="406dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    tools:layout_editor_absoluteX="128dp"
+                    tools:layout_editor_absoluteY="757dp" />
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
