@@ -99,19 +99,19 @@ public class ReviewPage extends AppCompatActivity {
     public void add_data(View view){
 
         EditText foodname = findViewById(R.id.foodname);
-        EditText titleEditText = findViewById(R.id.title);
+        EditText phonenum = findViewById(R.id.num);
         EditText reviewEditText = findViewById(R.id.review);
         RatingBar ratingBar = findViewById(R.id.ratingBar);
         OkHttpClient okHttpClient = new OkHttpClient();
 
         String name = foodname.getText().toString().trim();
-        String title = titleEditText.getText().toString().trim();
+        String num = phonenum.getText().toString().trim();
         String review = reviewEditText.getText().toString().trim();
         float rating = ratingBar.getRating();
 
         RequestBody formbody = new FormBody.Builder()
                 .add("foodname", name)
-                .add("title", title)
+                .add("num", num)
                 .add("review", review)
                 .add("rating", String.valueOf(rating))
                 .add("id", String.valueOf(id))
@@ -136,7 +136,7 @@ public class ReviewPage extends AppCompatActivity {
                     public void run() {
                         Toast.makeText(ReviewPage.this, "Review saved successfully", Toast.LENGTH_SHORT).show();
                         // Clear the EditText fields and reset the RatingBar
-                        Intent intent = new Intent(ReviewPage.this, Activity_Myreview.class);
+                        Intent intent = new Intent(ReviewPage.this, MainPage.class);
                         startActivity(intent);
                     }
                 });

@@ -40,6 +40,10 @@
             android:exported="false">
         </activity>
         <activity
+            android:name=".Activity_Profile"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".OTPActivity"
             android:exported="false">
         </activity>

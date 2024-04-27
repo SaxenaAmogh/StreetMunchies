@@ -2,49 +2,39 @@ package com.example.reviewapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.io.IOException;
+public class Activity_Profile extends AppCompatActivity {
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-public class MainPage extends AppCompatActivity {
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mainpage);
+        setContentView(R.layout.profile_page);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        Intent emailintent = getIntent();
-        String email = emailintent.getStringExtra("email");
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.menu_home) {
+                    Intent intent = new Intent(Activity_Profile.this, MainPage.class);
+                    startActivity(intent);
                     // Handle Home button click
                     return true;
                 } else if (item.getItemId() == R.id.menu_capture) {
                     // Handle Capture button click
-                    Intent intent = new Intent(MainPage.this, PhotoCaptureActivity.class);
+                    Intent intent = new Intent(Activity_Profile.this, PhotoCaptureActivity.class);
                     startActivity(intent);
                     return true;
                 } else if (item.getItemId() == R.id.menu_profile) {
                     // Handle Profile button click
-                    Intent intent = new Intent(MainPage.this, Activity_Profile.class);
+                    Intent intent = new Intent(Activity_Profile.this, Activity_Profile.class);
                     startActivity(intent);
                     return true;
                 }
@@ -52,4 +42,10 @@ public class MainPage extends AppCompatActivity {
             }
         });
     }
+
+    public void openReviews(View view){
+        Intent intent = new Intent(Activity_Profile.this, Activity_Myreview.class);
+        startActivity(intent);
+    }
+
 }

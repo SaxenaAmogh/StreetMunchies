@@ -170,13 +170,13 @@
                 </LinearLayout>
 
                 <EditText
-                    android:id="@+id/title"
+                    android:id="@+id/num"
                     android:layout_width="match_parent"
                     android:layout_height="60sp"
                     android:layout_marginBottom="15dp"
                     android:layout_weight="1"
                     android:background="@drawable/borders"
-                    android:hint="Title: "
+                    android:hint="Phone Number: "
                     android:padding="8dp"
                     android:textColor="#252424" />
 
