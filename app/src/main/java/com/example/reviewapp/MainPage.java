@@ -3,6 +3,7 @@ package com.example.reviewapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,5 +52,10 @@ public class MainPage extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void open_one(View view){
+        Intent intent = new Intent(MainPage.this, ramladdoo.class);
+        startActivity(intent);
     }
 }

@@ -46,93 +46,8 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/ramladdoo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/round"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.505"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="202dp"
-                        android:background="@drawable/round"
-                        app:cardCornerRadius="15dp"
-                        tools:layout_editor_absoluteX="35dp"
-                        tools:layout_editor_absoluteY="297dp">
-
-                        <ImageView
-                            android:id="@+id/foodimage"
-                            android:layout_width="407dp"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/round"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/ramladdoo"
-                            android:visibility="visible" />
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Ram Laddoo"
-                        android:textColor="#000000"
-                        android:textSize="24sp"
-                        tools:layout_editor_absoluteX="52dp"
-                        tools:layout_editor_absoluteY="406dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/momos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/round"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="202dp"
-                        android:background="@drawable/round"
-                        app:cardCornerRadius="15dp"
-                        tools:layout_editor_absoluteX="35dp"
-                        tools:layout_editor_absoluteY="297dp">
-
-                        <ImageView
-                            android:id="@+id/foodimage2"
-                            android:layout_width="407dp"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/round"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/momos"
-                            android:visibility="visible" />
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/foodname2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Momos"
-                        android:textColor="#000000"
-                        android:textSize="24sp"
-                        tools:layout_editor_absoluteX="52dp"
-                        tools:layout_editor_absoluteY="406dp" />
-                </LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/choleBhature"
+                    android:onClick="open_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -173,7 +88,97 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ramladdoo"
+                    android:onClick="open_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.505"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="202dp"
+                        android:background="@drawable/round"
+                        app:cardCornerRadius="15dp"
+                        tools:layout_editor_absoluteX="35dp"
+                        tools:layout_editor_absoluteY="297dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/foodimage"
+                            android:layout_width="407dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/round"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ramladdoo"
+                            android:visibility="visible" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Ram Laddoo"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="406dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/momos"
+                    android:onClick="open_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="202dp"
+                        android:background="@drawable/round"
+                        app:cardCornerRadius="15dp"
+                        tools:layout_editor_absoluteX="35dp"
+                        tools:layout_editor_absoluteY="297dp">
+
+                        <ImageView
+                            android:id="@+id/foodimage2"
+                            android:layout_width="407dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/round"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/momos"
+                            android:visibility="visible" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/foodname2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Momos"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="406dp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/bhelpuri"
+                    android:onClick="open_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -216,6 +221,7 @@
 
                 <LinearLayout
                     android:id="@+id/golgappe"
+                    android:onClick="open_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -257,6 +263,7 @@
 
                 <LinearLayout
                     android:id="@+id/kababs"
+                    android:onClick="open_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"

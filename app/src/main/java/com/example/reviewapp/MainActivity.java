@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Data saved successfully", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this, MainPage.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
             }

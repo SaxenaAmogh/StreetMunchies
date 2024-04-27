@@ -138,6 +138,7 @@ public class ReviewPage extends AppCompatActivity {
                         // Clear the EditText fields and reset the RatingBar
                         Intent intent = new Intent(ReviewPage.this, MainPage.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
             }

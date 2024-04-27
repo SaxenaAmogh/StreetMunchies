@@ -25,12 +25,14 @@ public class Activity_Profile extends AppCompatActivity {
                 if (item.getItemId() == R.id.menu_home) {
                     Intent intent = new Intent(Activity_Profile.this, MainPage.class);
                     startActivity(intent);
+                    finish();
                     // Handle Home button click
                     return true;
                 } else if (item.getItemId() == R.id.menu_capture) {
                     // Handle Capture button click
                     Intent intent = new Intent(Activity_Profile.this, PhotoCaptureActivity.class);
                     startActivity(intent);
+                    finish();
                     return true;
                 } else if (item.getItemId() == R.id.menu_profile) {
                     // Handle Profile button click

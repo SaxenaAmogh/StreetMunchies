@@ -44,6 +44,10 @@
             android:exported="false">
         </activity>
         <activity
+            android:name=".ramladdoo"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".OTPActivity"
             android:exported="false">
         </activity>
