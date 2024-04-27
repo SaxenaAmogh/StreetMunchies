@@ -49,5 +49,7 @@ public class Activity_Profile extends AppCompatActivity {
         Intent intent = new Intent(Activity_Profile.this, Activity_Myreview.class);
         startActivity(intent);
     }
-
+    public void closeAll(View view){
+        finishAffinity();
+    }
 }
